@@ -3,9 +3,10 @@ const isArmstrongNumber = (num) => {
 
   if (isBigInt(num)) {
 
-     let sum = 0;
+     let sum = 0n;
     numArray.forEach((n) => {
-      sum = sum + Math.pow(Bigint(n), numArray?.length);
+     sum = sum + BigInt(n) ** BigInt(numArray.length);
+
     });
 
     if (sum === num) return true;
@@ -26,6 +27,3 @@ const isBigInt = (n) => {
   if (typeof n === "bigint") return true;
   else return false;
 };
-
-const res = isArmstrongNumber(153);
-console.log("res ", res);
